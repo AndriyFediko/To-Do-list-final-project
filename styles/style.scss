@@ -1,0 +1,431 @@
+$black: #222;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    main {
+        display: flex;
+        color: $black;
+        height: 100vh;
+        .mainLeft {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            padding: 35px;
+            height: 100%;
+            box-shadow: 5px 0 15px #e0e0e0;
+            .addListBtn {
+                width: 88%;
+                height: 55px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.3em;
+                border: 4px solid $black;
+                color: $black;
+                background-color: transparent;
+                font-weight: 700;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 0.3s;
+                font-family: Montserrat;
+                .plus {
+                    height: 23px;
+                    width: 23px;
+                    margin-left: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    div {
+                        width: 23px;
+                        height: 3px;
+                        background-color: $black;
+                        position: absolute;
+                        transition: 0.3s;
+                    }
+                    div:nth-child(2) {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            .addListBtn:hover {
+                color: white;
+                background-color: $black;
+                .plus {
+                    div {
+                        background-color: white;
+                    }
+                }
+            }
+            .listContainer {
+                width: 100%;
+                margin-top: 50px;
+                position: relative;
+                margin-right: 20px;
+                li {
+                    width: 100%;
+                    height: 45px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                    font-size: 1.2em;
+                    font-family: Montserrat;
+                    font-weight: 500;
+                    cursor: pointer;
+                    padding: 5px 0px 5px 30px;
+                    transition: 0.3s;
+                    border-radius: 10px;
+                    z-index: 2;
+                    img {
+                        height: 28px;
+                        margin-right: 20px;
+                    }
+                    .deleteList {
+                        width: 28px;
+                        height: 28px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 15px;
+
+                        div {
+                            width: 2px;
+                            height: 17px;
+                            background-color: white;
+                            position: absolute;
+                            transform: rotate(45deg);
+                            pointer-events: none;
+                            transition: 0.1s;
+                        }
+                        div:last-child {
+                            transform: rotate(-45deg);
+                        }
+                    }
+                    .listLeft {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+                li:hover {
+                    background-color: #f5f5f5;
+                    .deleteList {
+                        div {
+                            background-color: #222;
+                        }
+                    }
+                }
+                li:last-child {
+                    margin-bottom: 0px;
+                }
+                .liActive {
+                    background-color: #f5f5f5;
+                    .deleteList {
+                        div {
+                            background-color: #f5f5f5;
+                        }
+                    }
+                }
+            }
+        }
+        .mainRight {
+            width: calc(100% - 400px);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .banner {
+                width: 100%;
+                height: 35vh;
+                background-image: url("../imgs/defautImage.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                .bannerText {
+                    background-color: rgba(0, 0, 0, 0.66);
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: 4em;
+                    font-family: Montserrat;
+                    letter-spacing: 30px;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                }
+                .bannerTextAnimation {
+                    letter-spacing: 10px;
+                    transition: 0.3s;
+                }
+                .editBannerbtn {
+                    width: 20px;
+                    height: 20px;
+                    position: relative;
+                    left: 20px;
+                    bottom: 40px;
+                    background-image: url(../imgs/edit.png);
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                    input[type="file"]::-webkit-file-upload-button {
+                        cursor: pointer;
+                    }
+                }
+            }
+            .taskContainer {
+                width: 100%;
+                height: calc(65vh - 170px);
+                padding: 30px 50px;
+                margin-top: 20px;
+                overflow: auto;
+                .taskCard {
+                    width: 100%;
+                    height: 75px;
+                    border-radius: 15px;
+                    margin-bottom: 30px;
+                    background-color: white;
+                    box-shadow: 0 0 25px #c5c5c5;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 30px;
+                    .completeBtn {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                        border: 3px solid rgb(25, 167, 25);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        transition: 0.3s;
+                        img {
+                            width: 75%;
+                        }
+                    }
+                    .completeBtn:hover {
+                        background-color: rgb(25, 167, 25);
+                    }
+                    .completeBtnActive {
+                        background-color: rgb(25, 167, 25);
+                    }
+                    .todoText {
+                        width: 88%;
+                        margin-left: 30px;
+                        font-size: 1.2em;
+                        font-family: Montserrat;
+                        font-weight: 500;
+                        transition: 0.3s;
+                    }
+                    .addToImportanBtn {
+                        width: 22px;
+                        height: 22px;
+                        cursor: pointer;
+                        img {
+                            transition: 0.3s;
+                            width: 22px;
+                            position: relative;
+                        }
+                        img:last-child {
+                            bottom: 26px;
+                        }
+                        .filled {
+                            opacity: 0;
+                        }
+                        .notFilled {
+                            opacity: 1;
+                        }
+                    }
+                    .important {
+                        .filled {
+                            opacity: 1;
+                        }
+                        .notFilled {
+                            opacity: 0;
+                        }
+                    }
+                    .deleteBtn {
+                        height: 20px;
+                        cursor: pointer;
+                        margin-left: 15px;
+                        img {
+                            height: 100%;
+                        }
+                    }
+                }
+                .taskCard:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .inputContainer {
+                width: calc(100% - 100px);
+                height: 75px;
+                margin-top: 30px;
+                background-color: white;
+                box-shadow: 0 0 25px #c5c5c5;
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 30px;
+                .todoInput {
+                    width: calc(100% - 50px);
+                    height: 100%;
+                    outline: none;
+                    font-family: Montserrat;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    border: none;
+                    color: $black;
+                }
+                .addTodoBtn {
+                    width: 40px;
+                    height: 40px;
+                    border: 3px solid rgb(25, 167, 25);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.3s;
+                    div {
+                        width: 3px;
+                        height: 24px;
+                        background-color: rgb(25, 167, 25);
+                        position: absolute;
+                        border-radius: 2px;
+                        transition: 0.3s;
+                    }
+                    div:last-child {
+                        transform: rotate(90deg);
+                    }
+                }
+                .addTodoBtn:hover {
+                    background-color: rgb(25, 167, 25);
+                    div {
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+    .addListPopUp {
+        width: 100%;
+        height: 100vh;
+        background-color: #222222e5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        .addListPopUpContainer {
+            width: 330px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            padding: 30px 30px 50px 30px;
+            font-family: montserrat;
+            span {
+                font-size: 1.8em;
+                font-weight: 700;
+                color: #222;
+            }
+            input {
+                width: 100%;
+                height: 45px;
+                margin-top: 25px;
+                font-size: 1.2em;
+                padding: 0 10px;
+                border: 3px solid #222;
+                border-radius: 8px;
+                color: #222;
+                outline: none;
+                font-weight: 600;
+            }
+            .fileInputContainer {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 25px;
+                border-radius: 8px;
+                background-color: #222;
+                input[type="file"]::-webkit-file-upload-button {
+                    cursor: pointer;
+                }
+                input {
+                    position: absolute;
+                    width: 270px;
+                    height: 45px;
+                    opacity: 0;
+                    margin-top: 0;
+                    cursor: pointer;
+                    z-index: 2;
+                }
+                span {
+                    font-size: 1.2em;
+                    color: white;
+                }
+                .plus {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 25px;
+                    div {
+                        width: 3px;
+                        height: 20px;
+                        background-color: white;
+                        position: absolute;
+                    }
+                    div:last-child {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            button {
+                width: 100%;
+                height: 45px;
+                margin-top: 25px;
+                font-size: 1.2em;
+                outline: none;
+                color: #222;
+                border-radius: 8px;
+                font-size: 1.2em;
+                background-color: transparent;
+                cursor: pointer;
+                font-weight: 600;
+                border: 3px solid #222;
+                transition: 0.3s;
+            }
+            button:hover {
+                background-color: #222;
+                color: white;
+            }
+            button:last-child {
+                border: 3px solid rgb(241, 73, 73);
+                color: rgb(255, 55, 55);
+            }
+            button:last-child:hover {
+                background-color: rgb(255, 55, 55);
+                color: white;
+            }
+        }
+    }
+}

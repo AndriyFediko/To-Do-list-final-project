@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/style.css" />
+        <link rel="icon" href="./imgs/to-do-list.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <title>To-do list</title>
+    </head>
+    <body>
+        <main>
+            <div class="mainLeft">
+                <button class="addListBtn" id="addListBtn">
+                    New List
+                    <div class="plus">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
+                <ul class="listContainer">
+                    <li class="listContainerIteam liActive listIteam">
+                        <div class="listLeft">
+                            <img class="listIteam"  src="./imgs/myDay.png" alt="" />
+                            <span class="listIteam">My day</span>
+                        </div>
+                        <div class="deleteList">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </li>
+                    <li class="listContainerIteam listIteam">
+                        <div class="listLeft listIteam">
+                            <img class="listIteam" src="./imgs/work.png" alt="" />
+                            <span class="listIteam">Work</span>
+                        </div>
+                        <div class="deleteList">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </li>
+                    <li class="listContainerIteam listIteam">
+                        <div class="listLeft listIteam">
+                            <img class="listIteam" src="./imgs/to-do.png" alt="" />
+                            <span class="listIteam">To-Do</span>
+                        </div>
+                        <div class="deleteList">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </li>
+                    <li class="listContainerIteam listIteam">
+                        <div class="listLeft listIteam">
+                            <img class="listIteam" src="./imgs/groceries.png" alt="" />
+                            <span class="listIteam">Groceries</span>
+                        </div>
+                        <div class="deleteList">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mainRight">
+                <div class="banner">
+                    <span class="bannerText bannerTextAnimation">My day</span>
+                    <div class="editBannerbtn">
+                        <input id="editBannerbtn" type="file">
+                    </div>
+                </div>
+                <div class="taskContainer"></div>
+                <div class="inputContainer">
+                    <input class="todoInput" type="text" placeholder="Add a to-do" />
+                    <div class="addTodoBtn">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="addListPopUp">
+            <div class="addListPopUpContainer">
+                <span>Add new list</span>
+                <input type="text" id="listinput" placeholder="List name" />
+                <div class="fileInputContainer">
+                    <input id="listIconInput" type="file" />
+                    <span>Add icon</span>
+                    <div class="plus">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <button class="add">Add</button>
+                <button class="cancel">Cancel</button>
+            </div>
+        </div>
+        <script src="./scripts/main.js"></script>
+    </body>
+</html>
