@@ -52,7 +52,7 @@ function addTodoTask(value, completed, id, important) {
     return toDoInfoArr;
 }
 
-function cardSettings(id, value, completeBtnClass, importantBtnClass) {
+function getToDoCard(id, value, completeBtnClass, importantBtnClass) {
     let card = `
                 <div class="taskCard" id="c${id}">
                     <div class="completeBtn complete ${completeBtnClass}">
@@ -77,13 +77,13 @@ function updateTasks() {
         if (toDoInfoArr[i].toDoType == currentToDo) {
             for (el of toDoInfoArr[i].todoArr) {
                 if (el.completed == false && el.important == false) {
-                    taskContainer.innerHTML += cardSettings(el.id, el.value, "", "");
+                    taskContainer.innerHTML += getToDoCard(el.id, el.value, "", "");
                 } else if (el.completed == true && el.important == false) {
-                    taskContainer.innerHTML += cardSettings(el.id, `<s style="color: #777">${el.value}</s>`, "completeBtnActive", "");
+                    taskContainer.innerHTML += getToDoCard(el.id, `<s style="color: #777">${el.value}</s>`, "completeBtnActive", "");
                 } else if (el.completed == false && el.important == true) {
-                    taskContainer.innerHTML += cardSettings(el.id, el.value, "", "important");
+                    taskContainer.innerHTML += getToDoCard(el.id, el.value, "", "important");
                 } else {
-                    taskContainer.innerHTML += cardSettings(el.id, `<s style="color: #777">${el.value}</s>`, "completeBtnActive", "important");
+                    taskContainer.innerHTML += getToDoCard(el.id, `<s style="color: #777">${el.value}</s>`, "completeBtnActive", "important");
                 }
             }
         }
@@ -355,4 +355,5 @@ editBannerbtn.addEventListener("change", () => {
     reader.readAsDataURL(image);
 
 });
+
 
