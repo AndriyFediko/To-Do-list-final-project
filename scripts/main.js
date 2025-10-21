@@ -21,12 +21,12 @@ let toDoInfoArr = [
     {
         toDoType: "To-Do",
         todoArr: [],
-        img: "./imgs/work.png",
+        img: "./imgs/to-do.png",
     },
     {
         toDoType: "Work",
         todoArr: [],
-        img: "./imgs/to-do.png",
+        img: "./imgs/work.png",
     },
     {
         toDoType: "Groceries",
@@ -353,4 +353,5 @@ editBannerbtn.addEventListener("change", () => {
         localStorage.setItem("bannerImage", src)
     };
     reader.readAsDataURL(image);
+
 });
